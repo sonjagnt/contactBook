@@ -3,6 +3,8 @@ import { deleteContact, updContact } from "../../redux/contacts/operations";
 import { Modal, Box, Typography, Button } from "@mui/material";
 import { useState } from "react";
 import { UpdateContactForm } from "../UpdateContactForm/UpdateContactForm";
+import { ThemeProvider } from "@mui/material/styles";
+import { theme } from "../../constants/muiTheme.js";
 
 function Contact({ contact }) {
   const style = {
@@ -30,9 +32,11 @@ function Contact({ contact }) {
     <div>
       <h3>{contact.name}</h3>
       <p>{contact.number}</p>
-      <Button onClick={() => setShowDeleteModal(true)} variant="contained">
-        Delete
-      </Button>
+      <ThemeProvider theme={theme}>
+        <Button onClick={() => setShowDeleteModal(true)} variant="contained">
+          Delete
+        </Button>
+      </ThemeProvider>
       {showDeleteModal && (
         <Modal open={showDeleteModal} onClose={() => setShowDeleteModal(false)}>
           <Box sx={style}>
@@ -47,16 +51,22 @@ function Contact({ contact }) {
             <div
               style={{ display: "flex", gap: "12px", justifyContent: "center" }}
             >
-              <Button type="button" onClick={handleDelete} variant="contained">
-                Yes
-              </Button>
-              <Button
-                type="button"
-                onClick={() => setShowModal(false)}
-                variant="contained"
-              >
-                No
-              </Button>
+              <ThemeProvider theme={theme}>
+                <Button
+                  type="button"
+                  onClick={handleDelete}
+                  variant="contained"
+                >
+                  Yes
+                </Button>
+                <Button
+                  type="button"
+                  onClick={() => setShowModal(false)}
+                  variant="contained"
+                >
+                  No
+                </Button>
+              </ThemeProvider>
             </div>
           </Box>
         </Modal>
