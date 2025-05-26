@@ -1,0 +1,22 @@
+.contactBox {
+  background-color: var(--white);
+  min-width: 200px;
+  border-radius: 6px;
+  box-shadow: 4px 5px 18px -6px rgba(141, 147, 167, 0.79);
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-transform: capitalize;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}

@@ -4,22 +4,12 @@ import { Modal, Box, Typography, Button } from "@mui/material";
 import { useState } from "react";
 import { UpdateContactForm } from "../UpdateContactForm/UpdateContactForm";
 import { ThemeProvider } from "@mui/material/styles";
-import { theme } from "../../constants/muiTheme.js";
+import { boxStyle, theme } from "../../constants/muiTheme.js";
+import s from "./Contact.module.css";
+import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
+import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 
 function Contact({ contact }) {
-  const style = {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: 300,
-    bgcolor: "background.paper",
-    borderRadius: "8px",
-    boxShadow: 24,
-    p: 4,
-    textAlign: "center",
-  };
-
   const [showUpdModal, setShowUpdModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const dispatch = useDispatch();
@@ -29,17 +19,31 @@ function Contact({ contact }) {
   };
 
   return (
-    <div>
+    <div className={s.contactBox}>
       <h3>{contact.name}</h3>
       <p>{contact.number}</p>
-      <ThemeProvider theme={theme}>
-        <Button onClick={() => setShowDeleteModal(true)} variant="contained">
-          Delete
-        </Button>
-      </ThemeProvider>
+      <div className={s.btns}>
+        <ThemeProvider theme={theme}>
+          <Button
+            onClick={() => setShowDeleteModal(true)}
+            variant="contained"
+            className={s.btn}
+          >
+            <DeleteOutlineIcon fontSize="small" /> Delete
+          </Button>
+          <Button
+            onClick={() => setShowUpdModal(true)}
+            variant="text"
+            className={s.btn}
+          >
+            <EditOutlinedIcon fontSize="small" />
+            Edit
+          </Button>
+        </ThemeProvider>
+      </div>
       {showDeleteModal && (
         <Modal open={showDeleteModal} onClose={() => setShowDeleteModal(false)}>
-          <Box sx={style}>
+          <Box sx={boxStyle}>
             <Typography
               id="modal-modal-title"
               variant="h6"
@@ -71,12 +75,8 @@ function Contact({ contact }) {
           </Box>
         </Modal>
       )}
-      <ThemeProvider theme={theme}>
-        <Button onClick={() => setShowUpdModal(true)}>Edit</Button>
-      </ThemeProvider>
-
       <Modal open={showUpdModal} onClose={() => setShowUpdModal(false)}>
-        <Box sx={style}>
+        <Box sx={boxStyle}>
           <UpdateContactForm
             contact={contact}
             onClose={() => setShowUpdModal(false)}

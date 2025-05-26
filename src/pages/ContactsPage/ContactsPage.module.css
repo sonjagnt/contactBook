@@ -1,6 +1,6 @@
 .section {
-  padding: 40px 80px;
-  height: 80vh;
+  padding: 24px 60px;
+  height: 90vh;
   background-color: var(--white);
   background-image: linear-gradient(
       rgba(246, 245, 245, 0.8),
@@ -10,11 +10,10 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  /* display: flex;
-  gap: 24px; */
 }
 
-/* .container {
+.container {
   display: flex;
-  gap: 48px;
-} */
+  flex-wrap: wrap;
+  column-gap: 24px;
+}

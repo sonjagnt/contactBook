@@ -25,9 +25,10 @@ function SearchBox() {
         Find contacts by name
         <input type="text" value={name} onChange={handleSearchNameChange} />
       </label>
-      <label>
+      <label className={s.searchbox}>
         Find contacts by number
         <input
+          className={s.numberInput}
           type="number"
           value={number}
           onChange={handleSearchNumberChange}

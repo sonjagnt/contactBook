@@ -9,4 +9,17 @@
 .searchbox input {
   height: 20px;
   outline: none;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid var(--btn-hover);
+}
+
+.numberInput::-webkit-inner-spin-button,
+.numberInput::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.numberInput {
+  appearance: none;
+  -moz-appearance: textfield;
 }
