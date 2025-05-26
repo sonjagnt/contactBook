@@ -13,18 +13,19 @@ const ContactForm = lazy(() =>
 
 function ContactsPage() {
   const dispatch = useDispatch();
-  // const isLoading = useSelector(selectLoading);
 
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
 
   return (
-    <section className={s.container}>
+    <section className={s.section}>
       <Suspense fallback={<p>Loading</p>}>
-        <ContactForm />
-        <SearchBox />
-        <ContactList />
+        <div className={s.container}>
+          <ContactForm />
+          <SearchBox />
+          <ContactList />
+        </div>
       </Suspense>
     </section>
   );

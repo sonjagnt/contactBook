@@ -1,5 +1,20 @@
-.container {
+.section {
   padding: 40px 80px;
+  height: 80vh;
+  background-color: var(--white);
+  background-image: linear-gradient(
+      rgba(246, 245, 245, 0.8),
+      rgba(246, 245, 245, 0.8)
+    ),
+    url("../../assets/heroimg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   /* display: flex;
   gap: 24px; */
 }
+
+/* .container {
+  display: flex;
+  gap: 48px;
+} */

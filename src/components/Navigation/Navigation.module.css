@@ -1,0 +1,9 @@
+.navlink {
+  transition: text-shadow 0.3s ease;
+}
+
+.navlink:hover,
+.navlink:focus,
+.active {
+  text-shadow: #fff 1px 0 10px;
+}

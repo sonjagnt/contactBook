@@ -71,13 +71,17 @@ function Contact({ contact }) {
           </Box>
         </Modal>
       )}
-      <Button onClick={() => setShowUpdModal(true)}>Edit</Button>
+      <ThemeProvider theme={theme}>
+        <Button onClick={() => setShowUpdModal(true)}>Edit</Button>
+      </ThemeProvider>
 
       <Modal open={showUpdModal} onClose={() => setShowUpdModal(false)}>
-        <UpdateContactForm
-          contact={contact}
-          onClose={() => setShowUpdModal(false)}
-        />
+        <Box sx={style}>
+          <UpdateContactForm
+            contact={contact}
+            onClose={() => setShowUpdModal(false)}
+          />
+        </Box>
       </Modal>
     </div>
   );

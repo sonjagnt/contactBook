@@ -32,12 +32,12 @@ const ContactForm = () => {
         <label htmlFor="name" className={s.label}>
           Name
           <Field type="text" name="name" className={s.input} />
-          <ErrorMessage name="name" component="span" />
+          <ErrorMessage name="name" component="span" className={s.error} />
         </label>
         <label htmlFor="number" className={s.label}>
           Number
           <Field type="tel" name="number" className={s.input} />
-          <ErrorMessage name="number" component="span" />
+          <ErrorMessage name="number" component="span" className={s.error} />
         </label>
         <ThemeProvider theme={theme}>
           <Button type="submit" variant="contained" className={s.addBtn}>

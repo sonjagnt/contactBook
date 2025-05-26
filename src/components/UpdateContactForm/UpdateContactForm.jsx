@@ -3,6 +3,8 @@ import { useDispatch } from "react-redux";
 import { validationSchema } from "../../validation/contacts.js";
 import { updContact } from "../../redux/contacts/operations.js";
 import { Button } from "@mui/material";
+import { ThemeProvider } from "@mui/material/styles";
+import { theme } from "../../constants/muiTheme.js";
 
 export const UpdateContactForm = ({ contact, onClose }) => {
   const dispatch = useDispatch();
@@ -33,13 +35,15 @@ export const UpdateContactForm = ({ contact, onClose }) => {
           <Field type="tel" name="number" />
           <ErrorMessage name="number" component="span" />
         </label>
-        <Button
-          type="submit"
-          variant="contained"
-          style={{ fontSize: "12px", width: "fit-content" }}
-        >
-          Submit
-        </Button>
+        <ThemeProvider theme={theme}>
+          <Button
+            type="submit"
+            variant="contained"
+            style={{ fontSize: "12px", width: "fit-content" }}
+          >
+            Submit
+          </Button>
+        </ThemeProvider>
       </Form>
     </Formik>
   );
