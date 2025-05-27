@@ -5,6 +5,7 @@ import { updContact } from "../../redux/contacts/operations.js";
 import { Button } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "../../constants/muiTheme.js";
+import s from "./UpdateContactForm.module.css";
 
 export const UpdateContactForm = ({ contact, onClose }) => {
   const dispatch = useDispatch();
@@ -26,13 +27,15 @@ export const UpdateContactForm = ({ contact, onClose }) => {
       validationSchema={validationSchema}
       onSubmit={handleSubmit}
     >
-      <Form>
+      <Form className={s.form}>
         <label htmlFor="name">
-          <Field type="text" name="name" />
+          Name
+          <Field type="text" name="name" className={s.input} />
           <ErrorMessage name="name" component="span" />
         </label>
         <label htmlFor="number">
-          <Field type="tel" name="number" />
+          Number
+          <Field type="tel" name="number" className={s.input} />
           <ErrorMessage name="number" component="span" />
         </label>
         <ThemeProvider theme={theme}>

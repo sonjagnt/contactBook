@@ -17,6 +17,10 @@ function Contact({ contact }) {
     dispatch(deleteContact(contact.id));
     setShowDeleteModal(false);
   };
+  const handleUpd = () => {
+    dispatch(updContact(contact.id));
+    setShowUpdModal(false);
+  };
 
   return (
     <div className={s.contactBox}>
@@ -77,6 +81,14 @@ function Contact({ contact }) {
       )}
       <Modal open={showUpdModal} onClose={() => setShowUpdModal(false)}>
         <Box sx={boxStyle}>
+          <Typography
+            id="modal-modal-title"
+            variant="h6"
+            component="h2"
+            style={{ marginBottom: "12px" }}
+          >
+            Edit Contact
+          </Typography>
           <UpdateContactForm
             contact={contact}
             onClose={() => setShowUpdModal(false)}
