@@ -20,7 +20,7 @@ function SearchBox() {
     dispatch(changeNumberFilter(event.target.value));
   };
   return (
-    <div>
+    <div className={s.container}>
       <label className={s.searchbox}>
         Find contacts by name
         <input type="text" value={name} onChange={handleSearchNameChange} />

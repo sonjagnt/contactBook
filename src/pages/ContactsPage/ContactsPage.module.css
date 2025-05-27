@@ -1,6 +1,5 @@
 .section {
-  padding: 24px 60px;
-  height: 90vh;
+  min-height: 100vh;
   background-color: var(--white);
   background-image: linear-gradient(
       rgba(246, 245, 245, 0.8),
@@ -9,10 +8,12 @@
     url("../../assets/heroimg.jpg");
   background-repeat: no-repeat;
   background-position: center;
+  background-attachment: scroll;
   background-size: cover;
 }
 
 .container {
+  padding: 32px 60px;
   display: flex;
   flex-wrap: wrap;
   column-gap: 24px;

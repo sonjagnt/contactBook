@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { fetchContacts } from "../../redux/contacts/operations";
 import s from "./ContactsPage.module.css";
+import { Loader } from "../../ui/Loader/Loader";
 const ContactList = lazy(() =>
   import("../../components/ContactList/ContactList")
 );
@@ -20,7 +21,7 @@ function ContactsPage() {
 
   return (
     <section className={s.section}>
-      <Suspense fallback={<p>Loading</p>}>
+      <Suspense fallback={<Loader />}>
         <div className={s.container}>
           <ContactForm />
           <SearchBox />

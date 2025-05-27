@@ -15,7 +15,7 @@ function Contact({ contact }) {
   const dispatch = useDispatch();
   const handleDelete = () => {
     dispatch(deleteContact(contact.id));
-    setShowModal(false);
+    setShowDeleteModal(false);
   };
 
   return (
@@ -65,7 +65,7 @@ function Contact({ contact }) {
                 </Button>
                 <Button
                   type="button"
-                  onClick={() => setShowModal(false)}
+                  onClick={() => setShowDeleteModal(false)}
                   variant="contained"
                 >
                   No
