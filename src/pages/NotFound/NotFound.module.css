@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  height: 90vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.link {
+  transition: color 0.5s ease;
+  text-decoration: underline;
+}
+.link:hover,
+.link:focus {
+  color: var(--dark-blue);
+}

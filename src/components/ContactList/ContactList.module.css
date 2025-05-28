@@ -1,6 +1,6 @@
 .contact-list {
   display: flex;
   justify-content: flex-start;
-  gap: 18px;
+  gap: 14px;
   flex-wrap: wrap;
 }
