@@ -1,3 +1,4 @@
+import { Toaster } from "react-hot-toast";
 import RegistrationForm from "../../components/RegistrationForm/RegistrationForm";
 import { theme } from "../../constants/muiTheme";
 import s from "./RegistrationPage.module.css";
@@ -8,6 +9,7 @@ function RegistrationPage() {
     <section className={s.container}>
       <ThemeProvider theme={theme}>
         <RegistrationForm />
+        <Toaster />
       </ThemeProvider>
     </section>
   );
